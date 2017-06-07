@@ -1,0 +1,34 @@
+{
+  "name": "dropbox-angular-bootstrap",
+  "version": "1.0.0",
+  "description": "Dropbox app using AngularJs, Angular UI Boostrap, UI Router, and Bootstrap 4",
+  "main": "app/app.js",
+  "dependencies": {
+    "gulp": "^3.9.1"
+  },
+  "devDependencies": {
+    "del": "^2.2.2",
+    "gulp-clean-css": "^3.4.0",
+    "gulp-concat": "^2.6.1",
+    "gulp-less": "^3.3.0",
+    "gulp-rename": "^1.2.2",
+    "gulp-uglify": "^3.0.0"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nicholas-davis/dropboxangular-bootstrap.git"
+  },
+  "keywords": [
+    "angular",
+    "bootstrap 4"
+  ],
+  "author": "Nick Davis <hire@nicholasdavis.co>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/nicholas-davis/dropbox-angular-bootstrap/issues"
+  },
+  "homepage": "https://github.com/nicholas-davis/dropbox-angular-bootstrap#readme"
+}
