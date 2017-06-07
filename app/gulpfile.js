@@ -1,5 +1,5 @@
 ﻿var gulp = require('gulp');
-var less = require('gulp-less');
+var scss = require('gulp-scss');
 var path = require('path');
 var minifyCss = require("gulp-clean-css");
 var uglify = require("gulp-uglify");
@@ -8,11 +8,11 @@ var del = require('del');
 var rename = require('gulp-rename');
 var pump = require('pump');
 
-//less
-gulp.task('less', function () {
-    gulp.src('assets/css/**/*.less')
-     .pipe(less({
-         paths: [path.join(__dirname, 'less', 'includes')]
+//scss
+gulp.task('scss', function () {
+    gulp.src('assets/css/**/*.scss')
+     .pipe(scss({
+         paths: [path.join(__dirname, 'scss', 'includes')]
      }))
      .pipe(gulp.dest('assets/css'));
 });
@@ -57,6 +57,6 @@ gulp.task('scripts', function () {
 
 //watchers
 gulp.task('watch', function () {
-    gulp.watch('assets/css/**/*.less', ['less']);
+    gulp.watch('assets/css/**/*.scss', ['scss']);
     gulp.watch(['**/*.js', '!app/app.min.js', '!app/_references.js'], ['scripts']);
 })
