@@ -10,11 +10,9 @@ var pump = require('pump');
 
 //scss
 gulp.task('scss', function () {
-    gulp.src('assets/css/**/*.scss')
-     .pipe(scss({
-         paths: [path.join(__dirname, 'scss', 'includes')]
-     }))
-     .pipe(gulp.dest('assets/css'));
+    gulp.src('assets/css/**/*.scss').pipe(scss(
+            { "bundleExec": true }
+        )).pipe(gulp.dest("assets/css'"));
 });
 
 //CSS Minification
