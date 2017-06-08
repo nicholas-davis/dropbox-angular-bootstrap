@@ -1,5 +1,5 @@
 ﻿var gulp = require('gulp');
-var scss = require('gulp-scss');
+var sass = require('gulp-sass');
 var path = require('path');
 var minifyCss = require("gulp-clean-css");
 var uglify = require("gulp-uglify");
@@ -8,11 +8,11 @@ var del = require('del');
 var rename = require('gulp-rename');
 var pump = require('pump');
 
-//scss
-gulp.task('scss', function () {
-    gulp.src('assets/css/**/*.scss').pipe(scss(
-            { "bundleExec": true }
-        )).pipe(gulp.dest("assets/css'"));
+//sass
+gulp.task('sass', function () {
+    gulp.src('assets/css/**/*.scss')
+        .pipe(sass().on('error', sass.logError))
+        .pipe(gulp.dest('assets/css'));
 });
 
 //CSS Minification
@@ -55,6 +55,7 @@ gulp.task('scripts', function () {
 
 //watchers
 gulp.task('watch', function () {
-    gulp.watch('assets/css/**/*.scss', ['scss']);
-    gulp.watch(['**/*.js', '!app/app.min.js', '!app/_references.js'], ['scripts']);
+    gulp.watch('assets/css/**/*.scss', ['sass']);
+    gulp.watch('assets/css/**/*.css', ['min-css']);
+    //gulp.watch(['**/*.js', '!app/app.min.js', '!app/_references.js'], ['scripts']);
 })
