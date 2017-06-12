@@ -49,10 +49,10 @@ dropboxApp.config([
 
         $stateProvider.state('Folder', { //parent   
             abstract: true,
-            templateUrl: 'app/components/folder/folder-view.html',
+            templateUrl: 'components/folder/folder-view.html',
             controller: "FolderController",
             controllerAs: "folder"
-        }).state('Files', {
+        }).state('Folder.Files', {
             url: '^/files',
             templateUrl: 'components/files/files-view.html',
             controller: "FilesController",
