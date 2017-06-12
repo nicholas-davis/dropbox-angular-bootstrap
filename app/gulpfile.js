@@ -8,20 +8,16 @@ var del = require('del');
 var rename = require('gulp-rename');
 var pump = require('pump');
 
-//sass
-gulp.task('sass', function () {
-    gulp.src('assets/css/**/*.scss')
-        .pipe(sass().on('error', sass.logError))
-        .pipe(gulp.dest('assets/css'));
-});
-
 //CSS Minification
 gulp.task('min-css', function () {
-    gulp.src(['assets/css/global.css',
-                    'assets/lib/loaders.css/loaders.css'])
-    .pipe(concat('global.min.css'))
-    .pipe(minifyCss())
-    .pipe(gulp.dest('assets/css'));
+    pump([
+        gulp.src('assets/css/**/*.scss'),
+        sass().on('error', sass.logError),
+        gulp.dest('assets/css'),
+        concat('global.min.css'),
+        minifyCss(),
+        gulp.dest('assets/css')
+    ]);
 });
 
 //clean scripts
@@ -55,7 +51,6 @@ gulp.task('scripts', function () {
 
 //watchers
 gulp.task('watch', function () {
-    gulp.watch('assets/css/**/*.scss', ['sass']);
     gulp.watch('assets/css/**/*.css', ['min-css']);
     //gulp.watch(['**/*.js', '!app/app.min.js', '!app/_references.js'], ['scripts']);
 })
