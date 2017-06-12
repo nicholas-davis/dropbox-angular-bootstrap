@@ -1,9 +1,12 @@
 ﻿//Dropbox App
 var dropboxApp = angular.module('dropboxApp', [
-    'ui.bootstrap',
-    'ui.router',
+    'ngAnimate',
+    'ngMessages',
     'dropboxApp.folder',
-    'dropboxApp.files'
+    'dropboxApp.files',
+    'angularMoment',
+    'ui.bootstrap',
+    'ui.router'
 ]);
 
 dropboxApp.run([

@@ -27,6 +27,6 @@
     "commit": "d6eca4fb0ace2986fa67f344c02f85c29c023d66"
   },
   "_source": "https://github.com/ConnorAtherton/loaders.css.git",
-  "_target": "^0.1.2",
+  "_target": "0.1.2",
   "_originalSource": "loaders.css"
 }
