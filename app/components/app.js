@@ -56,7 +56,14 @@ dropboxApp.config([
             url: '^/files',
             templateUrl: 'components/files/files-view.html',
             controller: "FilesController",
-            controllerAs: "files"
+            controllerAs: "files",
+            resolve: {
+                pageTitle: [
+                    '$stateParams', function ($stateParams) {
+                        $stateParams.pageTitle = "Files";
+                    }
+                ]
+            }
         });
     }
 ]);
