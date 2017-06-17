@@ -6,6 +6,25 @@
 /*=================================================*/
 //= Scaffolding
 /*=================================================*/
+html, body, main, aside, div[ui-view] {
+    height: 100%;
+    min-height: 100%;
+}
+
+.aside__body {
+    background-color: #f7f9fa;
+    width: 240px;
+    float: left;
+    position: fixed;
+}
+
+.aside__body, .main__body {
+   
+}
+
+.main__body, .header__body {
+    margin-left: 240px;
+}
 
 /*=================================================*/
 /* =Reset
