@@ -51,6 +51,6 @@ gulp.task('scripts', function () {
 
 //watchers
 gulp.task('watch', function () {
-    gulp.watch('assets/css/**/*.css', ['min-css']);
+    gulp.watch('assets/css/**/*.scss', ['min-css']);
     //gulp.watch(['**/*.js', '!app/app.min.js', '!app/_references.js'], ['scripts']);
 })
