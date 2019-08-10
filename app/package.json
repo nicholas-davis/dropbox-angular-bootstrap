@@ -4,7 +4,7 @@
   "description": "Dropbox app using AngularJs, Angular UI Boostrap, UI Router, and Bootstrap 4",
   "main": "app/app.js",
   "dependencies": {
-    "gulp": "^3.9.1"
+    "gulp": "^4.0.2"
   },
   "devDependencies": {
     "del": "^2.2.2",
